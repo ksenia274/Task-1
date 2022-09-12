@@ -10,7 +10,7 @@
  */
         internal static void SayHello(String name)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Hello {name}!");
         }
 
 /*
@@ -20,7 +20,9 @@
  */
         internal static void HelloUser()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Введите ваше имя: ");
+            string val = Console.ReadLine()!;
+            Console.WriteLine($"Hello {val}!");
         }
 
 /*
@@ -28,10 +30,15 @@
  * и печатает его квадрат. Как преобразовать число в строку, можно посмотреть в руководстве
  * https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
  * Вычисление квадрата числа можно производить непосредственно в шаблоне строки.
- */
+ */ 
         internal static void Square()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Введите целое число: ");
+            var ch = Console.ReadLine()!;
+            int ch_str = Int32.Parse(ch);
+            
+            Console.WriteLine(ch_str*ch_str);
+
         }
 
 /*
@@ -40,15 +47,20 @@
  */
         internal static void Sum()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Введите 2 целых числа: ");
+            var ch1 = Console.ReadLine()!;
+            var ch2 = Console.ReadLine()!;
+            int ch1_str = Int32.Parse(ch1);
+            int ch2_str = Int32.Parse(ch2);
+            Console.WriteLine($"Сумма указанных чисел: {ch1_str + ch2_str} ");
         }
 
-        public static void Main(string[] args)
-        {
-            SayHello("World");
-            HelloUser();
-            Square();
-            Sum();
+            public static void Main(string[] args)
+            {
+                SayHello("World");
+                HelloUser();
+                Square();
+                Sum();
+            }
         }
     }
-}

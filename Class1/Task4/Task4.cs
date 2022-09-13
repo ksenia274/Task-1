@@ -15,9 +15,29 @@
 +   +
 +++++
  */
-        internal static void PrintFrame(int width, int height, char frameChar = '*')
+        internal static void PrintFrame(int width, int height, char frameChar)
         {
-            throw new NotImplementedException();
+            string begendstr = "";
+            for (int a = 1; a <= width; a++)
+            {
+                begendstr = begendstr + frameChar;
+            }
+
+            Console.WriteLine(begendstr);
+
+
+            for (int i = 1; i <= height - 2; i++)
+            {
+                Console.Write(frameChar);
+                for (int j = 1; j <= width - 2; j++)
+                {
+                    Console.Write(' ');
+                }
+
+                Console.WriteLine(frameChar);
+            }
+
+            Console.WriteLine(begendstr);
         }
 
 /*
@@ -25,7 +45,31 @@
  */
         internal static void PrintFrame2(int width, int height, char frameChar = '*')
         {
-            throw new NotImplementedException();
+            string begendstr = "";
+            int a = 1;
+            while (a <= width)
+            {
+                begendstr = begendstr + frameChar;
+                a++;
+            }
+
+            Console.WriteLine(begendstr);
+            int i = 1;
+            while (i <= height - 2)
+            {
+                Console.Write(frameChar);
+                int j = 1;
+                while (j <= width - 2)
+                {
+                    Console.Write(' ');
+                    j++;
+                }
+
+                Console.WriteLine(frameChar);
+                i++;
+            }
+
+            Console.WriteLine(begendstr);
         }
 
 
@@ -37,7 +81,13 @@
  */
         internal static long Gcd(long a, long b)
         {
-            throw new NotImplementedException();
+            while (a != b)
+            {
+                if (a >= b) a -= b;
+                else b -= a;
+            }
+
+            return a;
         }
 
 /*
@@ -47,14 +97,24 @@
  */
         internal static double ExpTaylor(double x, int n)
         {
-            throw new NotImplementedException();
+            double res = 1;
+            double fact = 1;
+
+            for (int i = 1; i != n; i++)
+            {
+                fact *= i;
+                res += (Math.Pow(x, i)) / fact;
+            }
+
+            return res;
         }
 
         public static void Main(string[] args)
         {
             PrintFrame(5, 3, '+');
-            throw new NotImplementedException(
-                "Вызовите здесь все перечисленные в классе функции, как это сделано в предыдущих заданиях");
+            PrintFrame2(5, 3, '+');
+            Console.WriteLine(Gcd(2, 3));
+            Console.WriteLine(ExpTaylor(1.0, 10));
         }
     }
 }

@@ -20,7 +20,6 @@
  */
         internal static void HelloUser()
         {
-            Console.WriteLine("Введите ваше имя: ");
             string val = Console.ReadLine()!;
             Console.WriteLine($"Hello {val}!");
         }
@@ -33,7 +32,6 @@
  */ 
         internal static void Square()
         {
-            Console.WriteLine("Введите целое число: ");
             var ch = Console.ReadLine()!;
             int ch_str = Int32.Parse(ch);
             
@@ -47,12 +45,11 @@
  */
         internal static void Sum()
         {
-            Console.WriteLine("Введите 2 целых числа: ");
             var ch1 = Console.ReadLine()!;
             var ch2 = Console.ReadLine()!;
             int ch1_str = Int32.Parse(ch1);
             int ch2_str = Int32.Parse(ch2);
-            Console.WriteLine($"Сумма указанных чисел: {ch1_str + ch2_str} ");
+            Console.WriteLine(ch1_str + ch2_str);
         }
 
             public static void Main(string[] args)

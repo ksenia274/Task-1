@@ -2,7 +2,6 @@
 {
     public class Task2
     {
-
 /*
  * Задание 2.0. Прочтите задания 2.1-2.4, затем посмотрите, как тестируются реализации этих функций
  * в файле `Task2/Task2Test.cs`, и добавьте по аналогии собственные тестовые случаи
@@ -17,7 +16,18 @@
  */
         internal static int Min3(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            int var = a;
+            if (var > b)
+            {
+                var = b;
+            }
+
+            if (var > c)
+            {
+                var = c;
+            }
+
+            return var;
         }
 
 /*
@@ -25,19 +35,19 @@
  * Функция должна иметь вид одного выражения (https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members#methods).
  * Использование функций стандартной библиотеки в решении не допускается.
  */
-        internal static int Max3(int a, int b, int c) => throw new NotImplementedException();
+        internal static int Max3(int a, int b, int c) => (a >= b && a >= c) ? a : ((b >= c) ? b : c);
 
         /*
  * Задание 2.3. Дано значение угла α (типа Double) в градусах. Определите значение этого же угла в радианах,
  * учитывая, что 180° = π радианов (константа Math.PI).
  */
-        internal static double Deg2Rad(double aDeg) => throw new NotImplementedException();
+        internal static double Deg2Rad(double aDeg) => aDeg * Math.PI / 180;
 
 /*
 * Задание 2.4. Дано значение угла α в радианах. Определить значение этого же угла в градусах,
 * учитывая, что 180° = π радианов.
 */
-        internal static double Rad2Deg(double aRad) => throw new NotImplementedException();
+        internal static double Rad2Deg(double aRad) => aRad * 180 / Math.PI;
 
         public static void Main(string[] args)
         {
